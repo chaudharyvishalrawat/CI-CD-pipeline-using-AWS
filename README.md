@@ -149,3 +149,80 @@ Click on 'open' on right-hand side.
 # Here is an output of index.html file.
 
 ![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/2dc68ec9-4e48-49c7-807d-5c477f227f05)
+
+# Read about Appspec.yaml file for CodeDeploy.
+The application specification file (AppSpec file) is a YAML -formatted or JSON-formatted file used by CodeDeploy to manage deployment. The AppSpec file for an EC2/On-Premises deployment must be named appspec. yml or appspec.yaml, unless you are performing a local deployment.
+
+The appspec.yaml file is a configuration file that defines how the deployment should proceed. It specifies the deployment process, including which files should be deployed, where they should be deployed, and any scripts or hooks that should be executed during the deployment.
+
+The appspec.yaml file typically includes the following sections:
+
+version: This section specifies the version of the AppSpec file format being used.
+
+os: This section specifies the operating system of the target instances.
+
+files: This section specifies the source and destination locations of the files to be deployed.
+
+hooks: This section specifies any scripts or hooks that should be executed during the deployment, such as scripts to stop and start the application.
+
+The AppSpec file must be located in the root directory of the application source code and must be named “appspec.yml” or “appspec.yaml”. When you create a deployment group in CodeDeploy, you can specify the location of the AppSpec file in the deployment configuration.
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/ab8a2616-2b5f-4da9-a1c6-915cdedfca3a)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/936072a9-f181-4a2e-b34c-cb9c7b1f3d32)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/6375f2e6-0894-43c5-9338-22aed51c5a8c)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/eb55a2cc-3503-4852-bf55-ccef801b48d3)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/752e16de-c733-45c6-950b-b96e94517c7f)
+
+
+# 2. Create a CodePipeline that gets the code from CodeCommit, Builds the code using CodeBuild and deploys it to a Deployment Group.
+Go to the CodePipeline console. Click "Create pipeline."
+
+Enter a name for your pipeline.
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/385a6551-95bf-4152-bfda-8774d8a38418)
+
+
+Under "Source provider," choose "AWS CodeCommit."
+
+Select the repository and branch you want to deploy.
+
+Click "Next."
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/4f9ca28c-dd21-489c-8ff1-9b7f9ebc0e09)
+
+
+Under "Build provider," choose "AWS CodeBuild."
+
+Select "build project name."
+
+Click "Next.
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/87cddf61-948a-4854-a4f6-44698dc89252)
+
+
+Under "Deploy provider," choose "AWS CodeDeploy."
+
+Select the deployment group you created earlier.
+
+Click "Next."
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/0434863b-73a1-4298-ac24-93c5b1ee1f1e)
+
+
+Review the pipeline settings and click "Create pipeline."
+
+The pipeline will automatically trigger a build and deploy the new code to the EC2 instance.
+
+Successfully created a CodePipeline that automates the deployment process.
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/8f60910c-27cd-4e69-aa40-7b47fb89c4a1)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/d52443f2-63f7-43de-a95b-e8d4eb2e8d2d)
+
+![image](https://github.com/chaudharyvishalrawat/CI-CD-pipeline-using-AWS/assets/104204831/03bcac96-9bd5-4e2a-be2a-ff9c513f8c6d)
+
+# Thank you for reading!!
